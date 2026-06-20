@@ -316,7 +316,7 @@ async function loadAndRender(){
 function renderHeader(){
   const opts = {weekday:'short', month:'short', day:'numeric', year:'numeric'};
   const label = currentDate.toLocaleDateString('en-US', opts);
-  document.getElementById('dateDisplay').innerHTML = label + (isToday(currentDate) ? `<span class="sub">today</span>` : '');
+  document.getElementById('dateDisplay').innerHTML = label + (isToday(currentDate) ? `<span class="sub">Today</span>` : '');
 }
 
 function hexAlpha(hex, alpha){
@@ -348,7 +348,7 @@ function renderProgress(){
 
   const pct = totalAll>0 ? Math.round((doneAll/totalAll)*100) : 0;
   document.getElementById('progressLabel').innerHTML =
-    totalAll>0 ? `<b>${doneAll}/${totalAll}</b> tasks done today · <b>${pct}%</b>` : `no tasks logged yet — fill in a field below`;
+    totalAll>0 ? `<b>${doneAll}/${totalAll}</b> tasks done today · <b>${pct}%</b>` : `No tasks logged yet — fill in a field below`;
 }
 
 function renderRichDisplay(text, trackId, key){
