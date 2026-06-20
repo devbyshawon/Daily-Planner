@@ -1,0 +1,15 @@
+{
+  "name": "daily-build-log-backend",
+  "version": "1.0.0",
+  "description": "API + Postgres backend for Daily Build Log",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "pg": "^8.11.5"
+  }
+}
