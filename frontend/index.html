@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Build Log</title>
+<title>Daily Planner Log</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -114,11 +114,11 @@
 <div class="app">
   <div class="topbar">
     <div>
-      <div class="eyebrow">Daily Build Log</div>
+      <div class="eyebrow">Daily Planner Log</div>
       <div class="date-display" id="dateDisplay">—</div>
     </div>
     <div class="nav-controls">
-      <button class="btn ghost" id="carryOverBtn">↻ carry over unfinished</button>
+      <button class="btn ghost" id="carryOverBtn">↻ Carry over unfinished</button>
       <button class="btn" id="prevBtn">‹</button>
       <input type="date" id="datePicker">
       <button class="btn" id="nextBtn">›</button>
@@ -135,16 +135,14 @@
 
   <div class="tracks-grid" id="tracksGrid"></div>
 
-  <div class="footer-note">saved automatically · click any field to add notes, "- " for a checkable task, or paste a link</div>
+  <div class="footer-note">Saved automatically · Click any field to add notes, "- " for a checkable task, or paste a link</div>
 </div>
 
 <script>
 // ====== CONFIG ======
-// After you deploy the backend on Render, paste its URL here, e.g.
-// const API_BASE = 'https://daily-build-log-api.onrender.com';
-const API_BASE = 'PASTE_YOUR_RENDER_BACKEND_URL_HERE';
-// Must match the API_KEY environment variable you set on Render.
-const API_KEY = 'PASTE_YOUR_API_KEY_HERE';
+const API_BASE = 'https://daily-planner-log-api.onrender.com';
+
+const API_KEY = '5242322130c2cf788a4f6e4d0fd648039be7467d99e64a7570cfc944a4f37465';
 
 async function apiGet(date){
   const res = await fetch(`${API_BASE}/api/logs/${date}`, { headers: { 'x-api-key': API_KEY } });

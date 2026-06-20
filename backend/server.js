@@ -6,7 +6,6 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: '2mb' }));
 
-// Render provides DATABASE_URL automatically when you attach a Postgres instance.
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false }
@@ -23,8 +22,6 @@ async function init() {
 }
 init().catch(err => console.error('DB init failed', err));
 
-// Simple shared-secret auth so randoms on the internet can't write to your log.
-// Set API_KEY in Render's environment variables, and the same value in the frontend.
 function checkAuth(req, res, next) {
   const key = req.headers['x-api-key'];
   if (!process.env.API_KEY || key === process.env.API_KEY) return next();
