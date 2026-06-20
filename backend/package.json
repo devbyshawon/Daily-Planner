@@ -1,7 +1,7 @@
 {
-  "name": "daily-build-log-backend",
+  "name": "daily-planner-log-backend",
   "version": "1.0.0",
-  "description": "API + Postgres backend for Daily Build Log",
+  "description": "API + Postgres backend for Daily Planner Log",
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
